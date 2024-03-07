@@ -1,5 +1,9 @@
 import React from "react";
-
-export const Footer = () => {
-  return <footer>copyrights &nbps 2024</footer>;
+// passing length data as prop
+export const Footer = ({ length }) => {
+  return (
+    <footer>
+      {length} List {length === 1 ? "Item" : "Items"}
+    </footer>
+  );
 };
