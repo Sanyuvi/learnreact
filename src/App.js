@@ -2,17 +2,18 @@ import { Content } from "./components/content.js";
 import "./App.css";
 import { Header } from "./components/header.js";
 import { Footer } from "./components/footer.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddItem from "./components/AddItem.js";
 import SearchItem from "./components/SearchItem.js";
 
 function App() {
   //learning useState hooks & state management
-  const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem("todo-list"))
-  );
+  const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState("");
   const [search, setSearch] = useState("");
+  useEffect(() => {
+    JSON.parse(localStorage.getItem("todo-list"));
+  }, [items]);
   const addItems = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const newAddItem = { id, checked: false, item };
