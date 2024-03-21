@@ -2,12 +2,12 @@
     "items":[
         {
             "id":1,
-            "checked":"false",
+            "checked":"true",
             "item":"AI"
         },
          {
             "id":2,
-            "checked":"false",
+            "checked":"true",
             "item":"Javascript"
         },
          {
